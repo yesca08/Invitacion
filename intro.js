@@ -30,6 +30,7 @@ if (btnConfirm) {
   btnConfirm.setAttribute('href', whatsappUrl);
 }
 
+
 // ----------------------------------------------------
 // SCRIPT DE INTRO Y ANIMACIONES
 // ----------------------------------------------------
