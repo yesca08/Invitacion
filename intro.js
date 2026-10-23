@@ -9,25 +9,26 @@ const passesParam = params.get('pases');
 const guestName = nameParam ? nameParam.trim() : "Estimado/a invitado/a";
 const guestPasses = passesParam ? passesParam.trim() : "1";
 
-// Personalizar elementos en el HTML de forma segura
+// Inyectar el nombre en el HTML
 const greetingEl = document.getElementById('greeting');
 if (greetingEl) {
-  greetingEl.innerHTML = `¡Hola, <span class="guest-name">${guestName}</span>!`;
+  greetingEl.innerHTML = `${guestName}`;
 }
 
+// Inyectar la cantidad de pases en el HTML
 const guestPassesEl = document.getElementById('guest-passes');
 if (guestPassesEl) {
   guestPassesEl.textContent = guestPasses;
 }
 
-const message = `¡Hola! Confirmo mi asistencia. Gracias por hacerme parte de este momento tan importante.`;
+// Configurar el botón de WhatsApp con el mensaje personalizado
+const message = `¡Hola! Confirmo mi asistencia para ${guestPasses} espacio(s). Gracias por hacerme parte de este momento tan importante.`;
 const whatsappUrl = `https://wa.me/${hostPhoneNumber}?text=${encodeURIComponent(message)}`;
     
 const btnConfirm = document.getElementById('btn-confirm');
 if (btnConfirm) {
   btnConfirm.setAttribute('href', whatsappUrl);
 }
-
 
 // ----------------------------------------------------
 // SCRIPT DE INTRO Y ANIMACIONES
